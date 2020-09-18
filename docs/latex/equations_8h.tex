@@ -1,0 +1,118 @@
+\hypertarget{equations_8h}{}\doxysection{src/equations.h File Reference}
+\label{equations_8h}\index{src/equations.h@{src/equations.h}}
+
+
+Equation solver.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{equations_8h_a28160ed38ff3047ef6501ae370e256f8}{is\+Zero}} (double value)
+\item 
+int \mbox{\hyperlink{equations_8h_aeb2479185a3ddd4497116c07feccc6fa}{solve\+Linear\+Equation}} (double a, double b, double \&res)
+\item 
+int \mbox{\hyperlink{equations_8h_a8b31ec4053a3e3078da6f70a4cc4a949}{solve\+Quadratic\+Equation}} (double a, double b, double c, double \&res1, double \&res2)
+\item 
+double \mbox{\hyperlink{equations_8h_a2876dcc4846e2235854a720d47131b88}{discriminant}} (double a, double b, double c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{equations_8h_a596344e5a2992d2beec43b76a6294de0}\label{equations_8h_a596344e5a2992d2beec43b76a6294de0}} 
+const double {\bfseries E\+P\+S\+I\+L\+ON} = 1e-\/06
+\item 
+\mbox{\Hypertarget{equations_8h_a6acb1e8daa7cf3de359b4e87000ad85f}\label{equations_8h_a6acb1e8daa7cf3de359b4e87000ad85f}} 
+const int {\bfseries I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+R\+O\+O\+T\+S\+\_\+\+C\+O\+U\+NT} = -\/2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Equation solver. 
+
+\begin{DoxyAuthor}{Author}
+arti1208 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{equations_8h_a2876dcc4846e2235854a720d47131b88}\label{equations_8h_a2876dcc4846e2235854a720d47131b88}} 
+\index{equations.h@{equations.h}!discriminant@{discriminant}}
+\index{discriminant@{discriminant}!equations.h@{equations.h}}
+\doxysubsubsection{\texorpdfstring{discriminant()}{discriminant()}}
+{\footnotesize\ttfamily double discriminant (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+Calculates quadratic equation discriminant, that is b$^\wedge$2 -\/ 4 $\ast$ a $\ast$ c
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First parameter of equation \\
+\hline
+{\em b} & Second parameter of equation \\
+\hline
+{\em c} & Third parameter of equation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Equation\textquotesingle{}s discriminant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{equations_8h_a28160ed38ff3047ef6501ae370e256f8}\label{equations_8h_a28160ed38ff3047ef6501ae370e256f8}} 
+\index{equations.h@{equations.h}!isZero@{isZero}}
+\index{isZero@{isZero}!equations.h@{equations.h}}
+\doxysubsubsection{\texorpdfstring{isZero()}{isZero()}}
+{\footnotesize\ttfamily bool is\+Zero (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+Checks whether the given floating point value is close to zero
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value you want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if value is close to zero, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{equations_8h_aeb2479185a3ddd4497116c07feccc6fa}\label{equations_8h_aeb2479185a3ddd4497116c07feccc6fa}} 
+\index{equations.h@{equations.h}!solveLinearEquation@{solveLinearEquation}}
+\index{solveLinearEquation@{solveLinearEquation}!equations.h@{equations.h}}
+\doxysubsubsection{\texorpdfstring{solveLinearEquation()}{solveLinearEquation()}}
+{\footnotesize\ttfamily int solve\+Linear\+Equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double \&}]{res }\end{DoxyParamCaption})}
+
+Solves equation of form a $\ast$ x + b = 0 (linear equation)
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em a} & First parameter of equation \\
+\hline
+ & {\em b} & Second parameter of equation \\
+\hline
+\mbox{\texttt{ out}}  & {\em res} & Root of equation, if present \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if equation can\textquotesingle{}t be solved, 1 if there is one root and I\+N\+F\+I\+N\+I\+T\+E\+\_\+\+R\+O\+O\+T\+S\+\_\+\+C\+O\+U\+NT if root count is infinite 
+\end{DoxyReturn}
+\mbox{\Hypertarget{equations_8h_a8b31ec4053a3e3078da6f70a4cc4a949}\label{equations_8h_a8b31ec4053a3e3078da6f70a4cc4a949}} 
+\index{equations.h@{equations.h}!solveQuadraticEquation@{solveQuadraticEquation}}
+\index{solveQuadraticEquation@{solveQuadraticEquation}!equations.h@{equations.h}}
+\doxysubsubsection{\texorpdfstring{solveQuadraticEquation()}{solveQuadraticEquation()}}
+{\footnotesize\ttfamily int solve\+Quadratic\+Equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \&}]{res1,  }\item[{double \&}]{res2 }\end{DoxyParamCaption})}
+
+Solves equation of form a $\ast$ x$^\wedge$2 + b $\ast$ x + c = 0 (quadratic equation)
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em a} & First parameter of equation \\
+\hline
+ & {\em b} & Second parameter of equation \\
+\hline
+ & {\em c} & Third parameter of equation \\
+\hline
+\mbox{\texttt{ out}}  & {\em res1} & First root of equation, if present \\
+\hline
+\mbox{\texttt{ out}}  & {\em res2} & Second root of equation, if present \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Equation\textquotesingle{}s root count 
+\end{DoxyReturn}
