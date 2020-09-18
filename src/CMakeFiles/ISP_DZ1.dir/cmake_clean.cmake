@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "../ISP_DZ1"
+  "../ISP_DZ1.pdb"
   "CMakeFiles/ISP_DZ1.dir/equations.cpp.o"
   "CMakeFiles/ISP_DZ1.dir/main.cpp.o"
-  "ISP_DZ1"
-  "ISP_DZ1.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
