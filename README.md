@@ -6,3 +6,6 @@ Quadratic equation solver
 Using CMake, or by gcc 
 
     g++ -Wall -Wextra -o executable src/*.cpp && ./execucatable
+    
+## Documentation
+You can find documentation at https://arti1208.github.io/ISP_DZ0/html/
