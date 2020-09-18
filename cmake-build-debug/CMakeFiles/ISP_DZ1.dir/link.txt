@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/ISP_DZ1.dir/main.cpp.o CMakeFiles/ISP_DZ1.dir/equations.cpp.o  -o ISP_DZ1 

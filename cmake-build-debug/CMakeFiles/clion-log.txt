@@ -1,4 +1,0 @@
-/home/arti1208/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.6948.80/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/arti1208/Coding/Cpp/ISP_DZ1
--- Configuring done
--- Generating done
--- Build files have been written to: /home/arti1208/Coding/Cpp/ISP_DZ1/cmake-build-debug
