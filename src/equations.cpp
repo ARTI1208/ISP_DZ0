@@ -15,6 +15,8 @@ int solveLinearEquation(double a, double b, double& res) {
     assert(std::isfinite(a));
     assert(std::isfinite(b));
 
+    if (!(std::isfinite(a) && std::isfinite(b))) return EVALUATION_ERROR;
+
     if (isZero(a)) {
         if (isZero(b)) return INFINITE_ROOTS_COUNT;
         return 0;
@@ -27,6 +29,8 @@ int solveQuadraticEquation(double a, double b, double c, double& res1, double& r
     assert(std::isfinite(a));
     assert(std::isfinite(b));
     assert(std::isfinite(c));
+
+    if (!(std::isfinite(a) && std::isfinite(b) && std::isfinite(c))) return EVALUATION_ERROR;
 
     if (isZero(a)) {
         return solveLinearEquation(b, c, res1);
@@ -43,6 +47,7 @@ int solveQuadraticEquation(double a, double b, double c, double& res1, double& r
     }
 
     double disc = discriminant(a, b, c);
+    if (!std::isfinite(disc)) return EVALUATION_ERROR;
     if (disc < 0) return 0;
 
     if (isZero(disc)) {

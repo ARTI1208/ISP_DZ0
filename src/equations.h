@@ -8,6 +8,7 @@
 #define ISP_DZ1_EQUATIONS_H
 
 const double EPSILON = 1e-06;
+const int EVALUATION_ERROR = -1;
 const int INFINITE_ROOTS_COUNT = -2;
 
 /**
