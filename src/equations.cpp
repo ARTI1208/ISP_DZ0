@@ -17,7 +17,7 @@ int solveLinearEquation(double a, double b, double& res) {
 
     if (!(std::isfinite(a) && std::isfinite(b))) return EVALUATION_ERROR;
 
-    if (a < 1) {
+    if (std::abs(a) < 1) {
         double multiplier = 1 / EPSILON;
         a *= multiplier;
         b *= multiplier;
@@ -38,7 +38,7 @@ int solveQuadraticEquation(double a, double b, double c, double& res1, double& r
 
     if (!(std::isfinite(a) && std::isfinite(b) && std::isfinite(c))) return EVALUATION_ERROR;
 
-    if (a < 1) {
+    if (std::abs(a) < 1) {
         double multiplier = 1 / EPSILON;
         a *= multiplier;
         b *= multiplier;
