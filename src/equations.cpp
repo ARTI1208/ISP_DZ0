@@ -17,6 +17,12 @@ int solveLinearEquation(double a, double b, double& res) {
 
     if (!(std::isfinite(a) && std::isfinite(b))) return EVALUATION_ERROR;
 
+    if (a < 1) {
+        double multiplier = 1 / EPSILON;
+        a *= multiplier;
+        b *= multiplier;
+    }
+
     if (isZero(a)) {
         if (isZero(b)) return INFINITE_ROOTS_COUNT;
         return 0;
@@ -31,6 +37,13 @@ int solveQuadraticEquation(double a, double b, double c, double& res1, double& r
     assert(std::isfinite(c));
 
     if (!(std::isfinite(a) && std::isfinite(b) && std::isfinite(c))) return EVALUATION_ERROR;
+
+    if (a < 1) {
+        double multiplier = 1 / EPSILON;
+        a *= multiplier;
+        b *= multiplier;
+        c *= multiplier;
+    }
 
     if (isZero(a)) {
         return solveLinearEquation(b, c, res1);

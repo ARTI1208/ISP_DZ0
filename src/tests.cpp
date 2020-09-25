@@ -131,6 +131,16 @@ void checkQuadraticNoRoots() {
     test(std::isnan(res2), true, "checkQuadraticNoRoots1.2");
 }
 
+void checkCoefficientsCloseToEpsilon() {
+    double res1 = NAN;
+    double res2 = NAN;
+
+    int rootCount = solveQuadraticEquation(0.1 * EPSILON, 0.2 * EPSILON, 0.1 * EPSILON, res1, res2);
+    test(rootCount, 1, "checkCoefficientsCloseToEpsilon1");
+    test(res1, -1.0, "checkCoefficientsCloseToEpsilon1.1");
+    test(std::isnan(res2), true, "checkCoefficientsCloseToEpsilon1.2");
+}
+
 void checkQuadraticInfiniteRoots() {
     double res1 = NAN;
     double res2 = NAN;
@@ -248,6 +258,7 @@ void runAllTests() {
 
     checkQuadraticSimple();
     checkQuadraticNoRoots();
+    checkCoefficientsCloseToEpsilon();
     checkQuadraticInfiniteRoots();
     checkQuadraticZeroA();
     checkQuadraticZeroB();
